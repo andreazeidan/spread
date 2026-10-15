@@ -1,0 +1,5 @@
+# This file says “don’t track these!”
+# https://git-scm.com/docs/gitignore
+
+# Mac/Finder metadata.
+.DS_Store
