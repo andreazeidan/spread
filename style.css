@@ -1,0 +1,80 @@
+:root{
+	/* font */
+	--body-font: "source serif 4";
+	--display-font: "oswald", sans-serif;
+
+/* color */
+	--red: #D5190E;
+	--white: white;
+
+	/* text size */
+	--text-mobile: 1rem;
+	--text-desktop: 1.125rem;
+	--quote-desktop: 1.5rem;
+	--quote-mobile: 1.25rem;
+
+	/* space size */
+	--inline-gap: 1.9rem;
+
+}
+
+body{
+	font-family: var(--body-font);
+	font-size: var(--text-mobile);
+	line-height: 1.625rem;
+	margin-inline: 5rem;
+
+	display: grid;
+	grid-template-columns: 1fr;
+
+	blockquote{
+		font-family: var(--display-font);
+		font-size: var(--quote-mobile);
+		line-height: 1.75rem;
+		padding: 1.5rem;
+		margin-block: 1.5rem;
+		border: 0.1rem solid;
+	}
+
+	.question{
+				background-color: var(--red);
+				color: var(--white);
+				margin-inline-start: -3.5rem;
+			}
+
+
+	header{
+		font-family: var(--display-font);
+		text-transform: uppercase;
+		padding-block:2rem;
+
+		h1{
+		font-size: 6.25rem;
+		line-height: 6rem;
+		font-weight: bold;
+		padding-block: 1rem;
+		}
+
+		h2{
+		font-size: 3rem;
+		font-weight: bolder;
+		padding-block: 1rem;
+		}
+
+		h3{
+		font-size: 2rem;
+		font-weight: bold;
+		padding-block: 0.5rem;
+		}
+
+	}
+
+		nav{
+			background-color: black;
+			color:white;
+			display:flexbox;
+
+		}
+}
+
+
