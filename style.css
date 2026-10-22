@@ -12,6 +12,7 @@
 	--text-desktop: 1.125rem;
 	--quote-desktop: 1.5rem;
 	--quote-mobile: 1.25rem;
+	--em-mobile: 1.1rem;
 
 	/* space size */
 	--inline-gap: 1.9rem;
@@ -22,7 +23,8 @@ body{
 	font-family: var(--body-font);
 	font-size: var(--text-mobile);
 	line-height: 1.625rem;
-	margin-inline: 5rem;
+	margin-inline: 2rem;
+	border-inline-start: 0.2rem solid black;
 
 	display: grid;
 	grid-template-columns: 1fr;
@@ -34,13 +36,14 @@ body{
 		padding: 1.5rem;
 		margin-block: 1.5rem;
 		border: 0.1rem solid;
-	}
 
-	.question{
+		&.question{
 				background-color: var(--red);
 				color: var(--white);
-				margin-inline-start: -3.5rem;
+				margin-inline-start: -3.3rem;
+				padding-inline-start:2rem;
 			}
+	}
 
 
 	header{
@@ -53,6 +56,11 @@ body{
 		line-height: 6rem;
 		font-weight: bold;
 		padding-block: 1rem;
+		margin-inline:-0.5rem;
+
+		.feeling{
+			color:var(--red);
+		}
 		}
 
 		h2{
@@ -70,11 +78,51 @@ body{
 	}
 
 		nav{
-			background-color: black;
-			color:white;
-			display:flexbox;
+			display:flex;
+			gap: 1rem;
 
+			a{
+				background-color: black;
+				color:white;
+				padding-inline:1rem;
+			}
 		}
+
+	Main{
+		font-family: var(--body-font);
+		font-size: var(--text-mobile);
+		padding-inline:1rem;
+
+		em{
+			color:var(--red);
+			font-size: var(--em-mobile);
+			font-weight: bolder;
+		}
+
+		strong{
+			font-weight:600;
+		}
+
+		a{
+			text-decoration: underline;
+			font-weight:600;
+
+			&:hover{
+				color:var(--red);
+			}
+		}
+
+
+	}
+
+	footer{
+		font-family: var(--display-font);
+		background-color:var(--red);
+		color:var(--white);
+		padding:2rem;
+		margin-inline-start: -2.2rem;
+	}
+
 }
 
 
