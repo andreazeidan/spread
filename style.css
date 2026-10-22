@@ -32,6 +32,7 @@ body{
 	blockquote{
 		font-family: var(--display-font);
 		font-size: var(--quote-mobile);
+		font-weight: 500;
 		line-height: 1.75rem;
 		padding: 1.5rem;
 		margin-block: 1.5rem;
@@ -49,51 +50,81 @@ body{
 	header{
 		font-family: var(--display-font);
 		text-transform: uppercase;
-		padding-block:2rem;
 
 		h1{
-		font-size: 6.25rem;
+		font-size: 6.5rem;
 		line-height: 6rem;
 		font-weight: bold;
 		padding-block: 1rem;
-		margin-inline:-0.5rem;
+		margin-inline:-0.4rem;
 
-		.feeling{
+			.feeling{
 			color:var(--red);
-		}
-		}
-
-		h2{
-		font-size: 3rem;
-		font-weight: bolder;
-		padding-block: 1rem;
+			margin-inline:0.5rem;
+			display: inline-block;
+			transform: scaleX(1.05);
+			/* We use scaleX for 'feeling' to make the word fit the grid width */
+			}
 		}
 
-		h3{
-		font-size: 2rem;
-		font-weight: bold;
-		padding-block: 0.5rem;
+		div{
+			display:flex;
+			align-items: center;
+			gap:6rem;
+			justify-content: end;
+			border-block-end:0.2rem solid black;
+
+			h2{
+			font-size: 2rem;
+			font-weight: bolder;
+			padding-block: 1rem;
+			display:flex;
+			gap:6rem;
+			}
+
+			h3{
+			font-size: 1.5rem;
+			font-weight: bold;
+			line-height: 2rem;
+			padding-block: 2rem;
+			background-color:var(--red);
+			color:var(--white)
+			}
+
 		}
 
-	}
 
 		nav{
 			display:flex;
 			gap: 1rem;
+			justify-content: center;
+			border-block-start: 0.2rem solid black;
+			padding-block-start:1rem;
+			margin-bottom: 1rem;
+
 
 			a{
+				font-family: var(--display-font);
 				background-color: black;
-				color:white;
+				color:var(--white);
 				padding-inline:1rem;
+				padding-block: 0.25rem;
+				border-radius:0.25rem;
 			}
 		}
+
+	}
+
 
 	Main{
 		font-family: var(--body-font);
 		font-size: var(--text-mobile);
 		padding-inline:1rem;
 
-		em{
+		article{
+			font-size: var(--text-mobile);
+
+			em{
 			color:var(--red);
 			font-size: var(--em-mobile);
 			font-weight: bolder;
@@ -106,9 +137,23 @@ body{
 		a{
 			text-decoration: underline;
 			font-weight:600;
+			}
+		}
 
-			&:hover{
-				color:var(--red);
+		details{
+			margin-block:1rem;
+
+			h3{
+			font-family:var(--display-font);
+			font-size: 1.5rem;
+			font-weight: bold;
+			padding-block:0.5rem;
+			text-transform: uppercase;
+			}
+
+			li{
+				text-decoration: underline;
+				color: var(--red);
 			}
 		}
 
