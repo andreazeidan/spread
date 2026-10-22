@@ -23,11 +23,15 @@ body{
 	font-family: var(--body-font);
 	font-size: var(--text-mobile);
 	line-height: 1.625rem;
-	margin-inline: 2rem;
 	border-inline-start: 0.2rem solid black;
-
+	margin-inline-start: 2rem;
 	display: grid;
 	grid-template-columns: 1fr;
+
+
+	@media (width > 500px) {1fr,2fr}
+
+
 
 	blockquote{
 		font-family: var(--display-font);
@@ -41,8 +45,7 @@ body{
 		&.question{
 				background-color: var(--red);
 				color: var(--white);
-				margin-inline-start: -3.3rem;
-				padding-inline-start:2rem;
+				margin-inline-start: -4rem;
 			}
 	}
 
@@ -56,7 +59,9 @@ body{
 		line-height: 6rem;
 		font-weight: bold;
 		padding-block: 1rem;
-		margin-inline:-0.4rem;
+		margin-block:1rem;
+		padding-inline:-1rem;
+		border-block:0.2rem solid black;
 
 			.feeling{
 			color:var(--red);
@@ -69,15 +74,14 @@ body{
 
 		div{
 			display:flex;
-			align-items: center;
-			gap:6rem;
-			justify-content: end;
+			justify-content: space-between;
 			border-block-end:0.2rem solid black;
 
 			h2{
 			font-size: 2rem;
 			font-weight: bolder;
 			padding-block: 1rem;
+			padding-inline:1rem;
 			display:flex;
 			gap:6rem;
 			}
@@ -119,10 +123,11 @@ body{
 	Main{
 		font-family: var(--body-font);
 		font-size: var(--text-mobile);
-		padding-inline:1rem;
+		padding-inline: 2rem;
 
 		article{
 			font-size: var(--text-mobile);
+
 
 			em{
 			color:var(--red);
