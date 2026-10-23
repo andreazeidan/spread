@@ -6,12 +6,13 @@
 /* color */
 	--red: #D5190E;
 	--white: white;
+	--black:black;
 
 	/* text size */
-	--text-mobile: 1rem;
+	--text-mobile: 1.1rem;
 	--text-desktop: 1.125rem;
 	--quote-desktop: 1.5rem;
-	--quote-mobile: 1.25rem;
+	--quote-mobile: 1.75rem;
 	--em-mobile: 1.1rem;
 
 	/* space size */
@@ -19,6 +20,7 @@
 
 }
 
+/*
 header, main, footer {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -29,57 +31,64 @@ header, main, footer {
 		line-height: 2rem;
 		grid-template-columns: repeat(3, 1fr);
 	}
-}
+} */
 
 body{
 	font-family: var(--body-font);
 	font-size: var(--text-mobile);
 	line-height: 1.625rem;
-	border-inline: 0.2rem solid black;
-	margin-inline-start: 2rem;
-	display: grid;
-	grid-template-columns: 1fr;
-
-
-	@media (width > 500px) {
-		font-size: var(--text-desktop);
-		line-height: 2rem;
-		grid-template-columns: repeat(3, 1fr);
-	}
 
 	blockquote{
 		font-family: var(--display-font);
 		font-size: var(--quote-mobile);
 		font-weight: 500;
-		line-height: 1.75rem;
+		line-height: 2.5rem;
 		padding: 1.5rem;
 		margin-block: 1.5rem;
-		border: 0.1rem solid;
+		border: 0.1rem solid var(--red);
+
 
 		&.question{
-				background-color: var(--red);
-				color: var(--white);
-				margin-inline-start: -4rem;
+			text-wrap:balance;
+				color: var(--red);
+				border-color: var(--black);
+				display:flex;
+				align-items: center;
+
+
+
+
+				&::after{
+				content:'?';
+				font-size:calc(var(--quote-mobile)*)
+		}
+
 			}
 	}
 
 
 	header{
 		font-family: var(--display-font);
-		text-transform: uppercase;
+		border-inline:0.2rem solid black;
+		max-width:26.25rem;
+		margin-inline-start:2rem;
+
+
+
+
 
 		h1{
-		font-size: 6.5rem;
-		line-height: 6rem;
+		font-size: 7.95rem;
+		line-height: 7.5rem;
+		text-transform: uppercase;
 		font-weight: bold;
-		padding-block: 1rem;
-		margin-block:1rem;
-		padding-inline:-1rem;
-		border-block:0.2rem solid black;
+		text-box-edge: cap alphabetic;
+		text-box-trim: trim-both;
+		margin-inline: -0.065em;
 
 			.feeling{
 			color:var(--red);
-			margin-inline:0.5rem;
+			margin-inline:0.65rem;
 			display: inline-block;
 			transform: scaleX(1.05);
 			/* We use scaleX for 'feeling' to make the word fit the grid width */
@@ -92,13 +101,13 @@ body{
 			justify-content: space-between;
 			border-block-end:0.2rem solid black;
 
+
 			h2{
 			font-size: 2rem;
 			font-weight: bolder;
-			padding-block: 1rem;
-			padding-inline:1rem;
 			display:flex;
 			gap:6rem;
+			margin:0;
 			}
 
 			h3{
@@ -120,10 +129,12 @@ body{
 		display:flex;
 		gap: 1rem;
 		justify-content: center;
-		border-block-start: 0.2rem solid black;
-		padding-block-start:1rem;
+		padding-block:1rem;
 		margin-bottom: 1rem;
 		position: sticky;
+		border-block:0.2rem solid black;
+		inset-block-start: 0rem;
+		background-color: var(--white);
 
 			a{
 				font-family: var(--display-font);
@@ -140,11 +151,15 @@ body{
 	Main{
 		font-family: var(--body-font);
 		font-size: var(--text-mobile);
-		padding-inline: 2rem;
+		padding-inline:2rem;
+
 
 		article{
 			font-size: var(--text-mobile);
 
+			p{
+				padding-block-end:1rem;
+			}
 
 			em{
 			color:var(--red);
