@@ -19,19 +19,33 @@
 
 }
 
+header, main, footer {
+	display: grid;
+	grid-template-columns: 1fr;
+
+
+	@media (width > 500px) {
+		font-size: var(--text-desktop);
+		line-height: 2rem;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
 body{
 	font-family: var(--body-font);
 	font-size: var(--text-mobile);
 	line-height: 1.625rem;
-	border-inline-start: 0.2rem solid black;
+	border-inline: 0.2rem solid black;
 	margin-inline-start: 2rem;
 	display: grid;
 	grid-template-columns: 1fr;
 
 
-	@media (width > 500px) {1fr,2fr}
-
-
+	@media (width > 500px) {
+		font-size: var(--text-desktop);
+		line-height: 2rem;
+		grid-template-columns: repeat(3, 1fr);
+	}
 
 	blockquote{
 		font-family: var(--display-font);
@@ -74,6 +88,7 @@ body{
 
 		div{
 			display:flex;
+			align-items: center;
 			justify-content: space-between;
 			border-block-end:0.2rem solid black;
 
@@ -97,15 +112,18 @@ body{
 
 		}
 
+		}
 
-		nav{
-			display:flex;
-			gap: 1rem;
-			justify-content: center;
-			border-block-start: 0.2rem solid black;
-			padding-block-start:1rem;
-			margin-bottom: 1rem;
+	}
 
+	nav{
+		display:flex;
+		gap: 1rem;
+		justify-content: center;
+		border-block-start: 0.2rem solid black;
+		padding-block-start:1rem;
+		margin-bottom: 1rem;
+		position: sticky;
 
 			a{
 				font-family: var(--display-font);
@@ -115,9 +133,8 @@ body{
 				padding-block: 0.25rem;
 				border-radius:0.25rem;
 			}
-		}
 
-	}
+		}
 
 
 	Main{
@@ -133,16 +150,16 @@ body{
 			color:var(--red);
 			font-size: var(--em-mobile);
 			font-weight: bolder;
-		}
-
-		strong{
-			font-weight:600;
-		}
-
-		a{
-			text-decoration: underline;
-			font-weight:600;
 			}
+
+			strong{
+				font-weight:600;
+			}
+
+			a{
+				text-decoration: underline;
+				font-weight:600;
+				}
 		}
 
 		details{
@@ -173,6 +190,6 @@ body{
 		margin-inline-start: -2.2rem;
 	}
 
-}
+
 
 
