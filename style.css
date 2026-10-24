@@ -17,6 +17,8 @@
 
 	/* space size */
 	--inline-gap: 1.9rem;
+	--line: 0.2rem;
+	--line-inset: 2rem;
 
 }
 
@@ -37,6 +39,7 @@ body{
 	font-family: var(--body-font);
 	font-size: var(--text-mobile);
 	line-height: 1.625rem;
+	min-width:21.45rem;
 
 	blockquote{
 		font-family: var(--display-font);
@@ -45,7 +48,7 @@ body{
 		line-height: 2.5rem;
 		padding: 1.5rem;
 		margin-block: 1.5rem;
-		border: 0.1rem solid var(--red);
+		border: var(--line) solid var(--red);
 
 
 		&.question{
@@ -55,12 +58,9 @@ body{
 				display:flex;
 				align-items: center;
 
-
-
-
 				&::after{
 				content:'?';
-				font-size:calc(var(--quote-mobile)*)
+				font-size:calc(var(--quote-mobile)*4)
 		}
 
 			}
@@ -70,36 +70,40 @@ body{
 	header{
 		font-family: var(--display-font);
 		border-inline:0.2rem solid black;
-		max-width:26.25rem;
-		margin-inline-start:2rem;
-
-
+		margin-inline: 1rem;
 
 
 
 		h1{
-		font-size: 7.95rem;
+		font-size: 6.46rem;
 		line-height: 7.5rem;
 		text-transform: uppercase;
 		font-weight: bold;
 		text-box-edge: cap alphabetic;
 		text-box-trim: trim-both;
 		margin-inline: -0.065em;
+		min-width:21.45rem;
+		max-width:21.45rem;
 
 			.feeling{
 			color:var(--red);
-			margin-inline:0.65rem;
+			margin-inline:0.55rem;
 			display: inline-block;
 			transform: scaleX(1.05);
 			/* We use scaleX for 'feeling' to make the word fit the grid width */
 			}
 		}
 
-		div{
+		section{
 			display:flex;
 			align-items: center;
 			justify-content: space-between;
-			border-block-end:0.2rem solid black;
+			border-block-end:var(--line) solid var(--black);
+
+			/* Extend the line outside the box to the edge of the screen but still keep the text align*/
+			margin-inline:-1.5rem;
+			padding-inline-start: 1.5rem;
+
 
 
 			h2{
@@ -116,10 +120,10 @@ body{
 			line-height: 2rem;
 			padding-block: 2rem;
 			background-color:var(--red);
-			color:var(--white)
+			color:var(--white);
 			}
 
-		}
+			}
 
 		}
 
@@ -202,7 +206,6 @@ body{
 		background-color:var(--red);
 		color:var(--white);
 		padding:2rem;
-		margin-inline-start: -2.2rem;
 	}
 
 
