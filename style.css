@@ -17,29 +17,27 @@
 
 	/* space size */
 	--inline-gap: 1.9rem;
+
+	/* border  */
 	--line: 0.2rem;
 	--line-inset: 2rem;
 
 }
 
-/*
+
 header, main, footer {
 	display: grid;
 	grid-template-columns: 1fr;
+}
 
 
-	@media (width > 500px) {
-		font-size: var(--text-desktop);
-		line-height: 2rem;
-		grid-template-columns: repeat(3, 1fr);
-	}
-} */
 
 body{
 	font-family: var(--body-font);
 	font-size: var(--text-mobile);
 	line-height: 1.625rem;
 	min-width:21.45rem;
+	background-color: var(--white);
 
 	blockquote{
 		font-family: var(--display-font);
@@ -56,11 +54,12 @@ body{
 				color: var(--red);
 				border-color: var(--black);
 				display:flex;
+				justify-content: space-between;
 				align-items: center;
 
 				&::after{
 				content:'?';
-				font-size:calc(var(--quote-mobile)*4)
+				font-size:calc(var(--quote-mobile)*4);
 		}
 
 			}
@@ -69,21 +68,23 @@ body{
 
 	header{
 		font-family: var(--display-font);
-		border-inline:0.2rem solid black;
+		border-inline-start:var(--line) solid var(--black);
 		margin-inline: 1rem;
 
-
-
 		h1{
-		font-size: 6.46rem;
+		font-size: 6.39rem;
 		line-height: 7.5rem;
 		text-transform: uppercase;
 		font-weight: bold;
+		color:var(--black);
+
+		/* We want the text touch the grid line */
 		text-box-edge: cap alphabetic;
 		text-box-trim: trim-both;
 		margin-inline: -0.065em;
-		min-width:21.45rem;
-		max-width:21.45rem;
+		width:21.45rem;
+		border-inline-end:var(--line) solid var(--black);
+
 
 			.feeling{
 			color:var(--red);
@@ -104,45 +105,61 @@ body{
 			margin-inline:-1.5rem;
 			padding-inline-start: 1.5rem;
 
-
-
 			h2{
 			font-size: 2rem;
 			font-weight: bolder;
 			display:flex;
-			gap:6rem;
 			margin:0;
+			color:var(--black);
+
+			/* We want the text touch the grid line */
+			text-box-edge: cap alphabetic;
+			text-box-trim: trim-both;
+			margin-inline: -0.065em;
 			}
 
 			h3{
 			font-size: 1.5rem;
 			font-weight: bold;
 			line-height: 2rem;
-			padding-block: 2rem;
+			padding: 2rem;
 			background-color:var(--red);
 			color:var(--white);
+
+			/* to avoid the box size changing when the screen gets narrow */
+			min-width:13rem;
+			}
+
+			h3:hover{
+				background-color: var(--black);
 			}
 
 			}
 
 		}
 
-	}
 
-	nav{
+	Main{
+		font-family: var(--body-font);
+		font-size: var(--text-mobile);
+
+		nav{
 		display:flex;
 		gap: 1rem;
 		justify-content: center;
 		padding-block:1rem;
-		margin-bottom: 1rem;
+		margin-block-end: 1rem;
 		position: sticky;
-		border-block:0.2rem solid black;
+		border-block:var(--line) solid var(--black);
 		inset-block-start: 0rem;
-		background-color: var(--white);
+
+		/* We want to override the negative margin of the header section(-1.5rem), which can make the line past the edge  */
+		margin-inline: -0.5rem;
 
 			a{
 				font-family: var(--display-font);
-				background-color: black;
+				font-weight: 600;
+				background-color: var(--black);
 				color:var(--white);
 				padding-inline:1rem;
 				padding-block: 0.25rem;
@@ -152,14 +169,10 @@ body{
 		}
 
 
-	Main{
-		font-family: var(--body-font);
-		font-size: var(--text-mobile);
-		padding-inline:2rem;
-
-
 		article{
 			font-size: var(--text-mobile);
+			padding-inline:2rem;
+			color:var(--black);
 
 			p{
 				padding-block-end:1rem;
@@ -189,16 +202,23 @@ body{
 			font-size: 1.5rem;
 			font-weight: bold;
 			padding-block:0.5rem;
+			margin-inline-start: 2rem;
 			text-transform: uppercase;
 			}
 
-			li{
-				text-decoration: underline;
-				color: var(--red);
+			h3:hover{
+				color:var(--red);
 			}
+
+			li{
+				margin-inline-start: 2rem;
+				text-decoration: underline;
+			}
+
+			li:hover{
+					color: var(--red);
+				}
 		}
-
-
 	}
 
 	footer{
@@ -207,7 +227,129 @@ body{
 		color:var(--white);
 		padding:2rem;
 	}
+}
+
+@media (width > 500px) {
+	body{
+		header{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		grid-template-areas:
+			'webname . credit '
+			'title title title';
+
+		/* pull the credit to touch the right edge of the screen(caucel the margin of body)*/
+		margin-inline-end: -0.5rem;
+		align-items: center;
+
+
+			section{
+				display: contents;
+
+				h2{
+					grid-area: webname;
+					gap:0;
+				}
+
+				h3{
+					grid-area: credit;
+				}
+
+				h3:hover{
+					background-color:var(--black);
+				}
+
+				&::after{
+					content: '';
+					grid-row: 1;
+					/* to made the line cross the whole screen */
+					grid-column: 1/-1;
+					align-self: end;
+					border-block-end:var(--line) solid var(--black);
+					margin-inline-start:-1.5rem;
+				}
+			}
+
+
+			h1{
+				grid-area: title;
+				justify-self: start;
+			}
+
+		}
+
+		main{
+			display:grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				'line line line'
+				'sidebar text text';
+			margin-inline:1rem;
+
+			/* We use ::before & after to draw the border for main(to create a 'grid' line) */
+			&::before{
+				content: '';
+				grid-area: line;
+				border-block-start:var(--line) solid var(--black);
+				border-inline:var(--line) solid var(--black);
+				margin-inline:-1rem;
+
+			&::after{
+				content: '';
+				grid-area: sidebar;
+				width:21.22rem;
+				border-inline:var(--line) solid var(--black);
+			}
+
+			nav{
+				grid-area: sidebar;
+				align-self: start;
+				display:flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				position: sticky;
+
+				/* max-width same as h1(align with h1) */
+				width:21.45rem;
+				/* min-width:21.45rem; */
+
+				/* remove the border from mobile*/
+				border: none;
+
+				padding-block:2rem;
+				padding-inline:2rem;
+				margin-block-end:0;
+				text-align:center;
+				background-color: transparent;
+
+				a:hover{
+					background-color:var(--red);
+				}
+			}
+
+			section{
+				grid-area: text;
+				border-inline-start:var(--line) solid var(--black);
+				margin-inline-start:1rem;
+				padding-block-start: 2rem;
+			}
+
+			article{
+				a:hover{
+					color:var(--red);
+				}
+			}
+
+		}
+	}
 
 
 
+}
 
+/* want to create a different vibe when hover on "feeling"(match the concept of the article) */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has */
+body:has(.feeling:hover) {
+    --black: white;
+    --white: black;
+	}
