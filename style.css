@@ -36,7 +36,7 @@ body{
 	font-family: var(--body-font);
 	font-size: var(--text-mobile);
 	line-height: 1.625rem;
-	min-width:21.45rem;
+	min-width:22rem;
 	background-color: var(--white);
 
 	blockquote{
@@ -72,7 +72,7 @@ body{
 		margin-inline: 1rem;
 
 		h1{
-		font-size: 6.39rem;
+		font-size: 6.55rem;
 		line-height: 7.5rem;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -81,16 +81,16 @@ body{
 		/* We want the text touch the grid line */
 		text-box-edge: cap alphabetic;
 		text-box-trim: trim-both;
-		margin-inline: -0.065em;
-		width:21.45rem;
+		margin-inline: -0.063em;
+		width:22rem;
 		border-inline-end:var(--line) solid var(--black);
 
 
 			.feeling{
 			color:var(--red);
-			margin-inline:0.55rem;
+			margin-inline:0.58rem;
 			display: inline-block;
-			transform: scaleX(1.05);
+			transform: scaleX(1.054);
 			/* We use scaleX for 'feeling' to make the word fit the grid width */
 			}
 		}
@@ -134,6 +134,7 @@ body{
 				background-color: var(--black);
 			}
 
+
 			}
 
 		}
@@ -150,6 +151,7 @@ body{
 		padding-block:1rem;
 		margin-block-end: 1rem;
 		position: sticky;
+		background-color: var(--white);
 		border-block:var(--line) solid var(--black);
 		inset-block-start: 0rem;
 
@@ -251,6 +253,10 @@ body{
 					gap:0;
 				}
 
+				h2:hover{
+					color:var(--red);
+				}
+
 				h3{
 					grid-area: credit;
 				}
@@ -276,6 +282,7 @@ body{
 				justify-self: start;
 			}
 
+
 		}
 
 		main{
@@ -287,6 +294,7 @@ body{
 			margin-inline:1rem;
 
 			/* We use ::before & after to draw the border for main(to create a 'grid' line) */
+			/* horizontal line under the title */
 			&::before{
 				content: '';
 				grid-area: line;
@@ -295,10 +303,11 @@ body{
 				margin-inline:-1rem;
 			}
 
+			/* vertical line near the nav */
 			&::after{
 				content: '';
 				grid-area: sidebar;
-				width:21.22rem;
+				width:21.79rem;
 				border-inline:var(--line) solid var(--black);
 			}
 
@@ -311,7 +320,7 @@ body{
 				position: sticky;
 
 				/* max-width same as h1(align with h1) */
-				width:21.45rem;
+				width:22rem;
 				/* min-width:21.45rem; */
 
 				/* remove the border from mobile*/
@@ -330,7 +339,6 @@ body{
 
 			section{
 				grid-area: text;
-				border-inline-start:var(--line) solid var(--black);
 				margin-inline-start:1rem;
 				padding-block-start: 2rem;
 			}
@@ -354,3 +362,5 @@ body:has(.feeling:hover) {
     --black: white;
     --white: black;
 	}
+
+

@@ -1,3 +1,8 @@
+Our claude link:
+https://claude.ai/share/ff1c751e-c68c-4c54-a65b-5493714fda2e
+
+
+
 <!--
 This file provides context/instructions for your LLM/“AI”! https://agents.md/
 The `CLAUDE.md` is just symlinked from this file.
