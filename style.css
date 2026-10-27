@@ -381,7 +381,31 @@ body{
 
 }
 
+@media print {
+    :root{
+        --background:initial;
+        --spacing:18pt;
+        print-color-adjust: exact;
+    }
 
+    body{
+        font-size: var(--text-print);
+
+        main{
+            nav{
+                border-block-end:none;
+                a{display:none;}
+            }
+
+            article{
+            }
+
+            details{
+            display:none;
+            }
+        }
+    }
+}
 /* want to create a different vibe when hover on "feeling"(match the concept of the article) */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has */
 body:has(.feeling:hover) {
