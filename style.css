@@ -46,7 +46,7 @@ body{
 		font-weight: 500;
 		line-height: 2.5rem;
 		padding: 1.5rem;
-		margin-block: calc(var(--gap)*2);
+		margin-block: calc(var(--gap)*1.5);
 		color:var(--white);
 		background-color: var(--black);
 
@@ -266,6 +266,8 @@ body{
 	body{
 
 		blockquote{
+		margin-block: calc(var(--gap)*2);
+
 		&.question{
 				&::after{
 				content:'?';
@@ -409,6 +411,10 @@ body{
 
     body{
         font-size: var(--text-print);
+		display:flex;
+		flex-direction: column;
+		min-height: 100vh;
+
 		blockquote{
 			margin-block: var(--gap);
 		}
@@ -426,13 +432,24 @@ body{
             display:none;
             }
         }
+
+		footer{
+			margin-top:auto;
+		}
     }
 }
+
+@page{
+	margin-block-start: 2cm;
+
+	&:nth-child(1){
+		margin-block-start: 0;
+	}
+	}
+
 /* want to create a different vibe when hover on "feeling"(match the concept of the article) */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has */
 body:has(.feeling:hover) {
     --black: white;
     --white: black;
 	}
-
-
