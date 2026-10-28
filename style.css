@@ -46,7 +46,7 @@ body{
 		font-weight: 500;
 		line-height: 2.5rem;
 		padding: 1.5rem;
-		margin-block: 1.5rem;
+		margin-block: calc(var(--gap)*2);
 		color:var(--white);
 		background-color: var(--black);
 
@@ -107,7 +107,7 @@ body{
 			margin-inline:-1.2rem -1rem;
 
 			h2{
-			font-size: 3rem;
+			font-size: 2rem;
 			font-weight: bolder;
 			display:flex;
 			margin:0;
@@ -182,8 +182,8 @@ body{
 
 			h2{
 			font-family: var(--display-font);
-			font-size: 3rem;
-			line-height: 3.5rem;
+			font-size: 2.5rem;
+			line-height: 3rem;
 			font-weight: bolder;
 			border-block-end: var(--line) solid var(--black);
 			margin-block-start: calc(var(--gap)*1.5);
@@ -386,6 +386,10 @@ body{
 
 			article{
 				margin-block-start: 0;
+				h2{
+					font-size: 3rem;
+					line-height: 3.5rem;
+				}
 				a:hover{
 					color:var(--red);
 				}
@@ -405,6 +409,9 @@ body{
 
     body{
         font-size: var(--text-print);
+		blockquote{
+			margin-block: var(--gap);
+		}
 
         main{
             nav{
