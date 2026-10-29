@@ -96,8 +96,10 @@ body{
 			justify-content: space-between;
 			border-block-end:var(--line) solid var(--black);
 
-			/* Extend the line outside the box to the edge of the screen but still keep the text align*/
-			margin-inline:-1.2rem -1rem;
+			/* We want the line to bleed out of the vertical line on the left, these negative numbers overide the margin of the header*/
+			/* The left value is 0.2rem bigger to also cover the width of the vertical line which is 0.2rem */
+			margin-inline-start:-1.2rem;
+			margin-inline-end:-1rem;
 
 			h2{
 			font-size: 2rem;
@@ -123,7 +125,7 @@ body{
 				color:var(--white);
 				position:relative;
 
-				/* to avoid the box size changing when the screen gets narrow */
+				/* to avoid the box size changing when the screen gets smaller */
 				min-width:13rem;
 
 				/* We used an invisible box to cover the whole h3(posiiton:relative),so we can click anywhere of the box triggle the link no just the text.*/
@@ -131,7 +133,7 @@ body{
 					&::after{
 						content:'';
 						position:absolute;
-						inset:0; /* to fills the whole h3 */
+						inset:0; /* stretches it to fill the whole h3 */
 						}
 					}
 				}
@@ -151,9 +153,6 @@ body{
 		background-color: var(--white);
 		border-block:var(--line) solid var(--black);
 		inset-block-start: 0rem;
-
-		/* We want to override the negative margin of the header section(-1.5rem), which can make the line past the edge  */
-		/* margin-inline: -0.5rem; */
 
 			a{
 				font-family: var(--display-font);
